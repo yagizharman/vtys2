@@ -1,0 +1,35 @@
+﻿@using Projeveritabanıdeneme.Models.EntityFramework
+@model List<Akademik_Ders_Öğrenci>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-3">
+
+    <table class="table table-bordered">
+        <p align="left">
+            <a class="btn btn-dark " href="/Öğrenci/DersKayıt">Yeni Ders Ekle</a>
+
+
+
+        <thead>
+            <tr>
+                <th>Ders Tanımı</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ders in Model)
+            {
+
+            <tr>
+                <td>@ders.Akademik_Ders_Öğrenci_Id</td>
+
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

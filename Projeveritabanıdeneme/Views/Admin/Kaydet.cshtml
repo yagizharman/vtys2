@@ -1,0 +1,85 @@
+﻿@model Projeveritabanıdeneme.ViewModels.DanismanUzmanlıkController
+@{
+    ViewBag.Title = "Kaydet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-3">
+
+    <h1>Akademik Personel</h1>
+
+    @using (Html.BeginForm("Kaydet", "Admin", FormMethod.Post))
+    {
+        <h2>Kişisel Bilgiler</h2>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Kullanıcı.TC_No)
+            @Html.TextBoxFor(m => m.Danışman.Kullanıcı.TC_No, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Danışman_Ad)
+            @Html.TextBoxFor(m => m.Danışman.Danışman_Ad, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Danışman_Soyad)
+            @Html.TextBoxFor(m => m.Danışman.Danışman_Soyad, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Danışman_Doğum_Tarihi)
+            @Html.TextBoxFor(m => m.Danışman.Danışman_Doğum_Tarihi, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Danışman_Doğum_Yeri)
+            @Html.TextBoxFor(m => m.Danışman.Danışman_Doğum_Yeri, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Danışman_Uyruğu)
+            @Html.TextBoxFor(m => m.Danışman.Danışman_Uyruğu, new { @class = "form-control" })
+        </div>
+        <h2>Akademik Bilgiler</h2>
+        <div class="form-group">
+
+            @Html.LabelFor(m => m.Danışman.Uzmanlık_Alanı.Uzmanlık_Id)
+            @Html.DropDownListFor(m => m.Danışman.Uzmanlık_ıd, new SelectList(Model.UzmanlıkAlanı, "Uzmanlık_Id", "Uzmanlık_Ad"), "Alan Seçiniz", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Uzmanlık_Başlama_Tarihi)
+            @Html.TextBoxFor(m => m.Danışman.Uzmanlık_Başlama_Tarihi, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Unvan)
+            @Html.TextBoxFor(m => m.Danışman.Unvan, new { @class = "form-control" })
+        </div>
+        <h2>Kayıt Bilgileri</h2>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Kullanıcı.Kullanıcı_Adı)
+            @Html.TextBoxFor(m => m.Danışman.Kullanıcı.Kullanıcı_Adı, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Kullanıcı.Parola)
+            @Html.TextBoxFor(m => m.Danışman.Kullanıcı.Parola, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Kullanıcı.Rol)
+            @Html.TextBoxFor(m => m.Danışman.Kullanıcı.Rol, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Kullanıcı.Mail)
+            @Html.TextBoxFor(m => m.Danışman.Kullanıcı.Mail, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Danışman.Kullanıcı.Tel)
+            @Html.TextBoxFor(m => m.Danışman.Kullanıcı.Tel, new { @class = "form-control" })
+        </div>
+
+
+
+        @*<div class="form-group">
+                @Html.LabelFor(m => m.Uzmanlık_Alanı.Uzmanlık_Id)
+                @Html.TextBoxFor(m => m.Uzmanlık_Alanı.Uzmanlık_Id, new { @class = "form-control" })
+            </div>*@
+
+        @Html.HiddenFor(m => m.Danışman.Danışman_Id);
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    }
+
+</div>

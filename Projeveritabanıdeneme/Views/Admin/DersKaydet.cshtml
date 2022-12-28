@@ -1,0 +1,56 @@
+﻿@model Projeveritabanıdeneme.ViewModels.Danisman_UzmanlıkViewModel
+@{
+    ViewBag.Title = "DersKaydet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-3">
+
+    <h2>Akademik Ders</h2>
+
+    @using (Html.BeginForm("Kaydet3", "Admin", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Akademikders.Ders_Tanımı)
+            @Html.TextBoxFor(m => m.Akademikders.Ders_Tanımı, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Akademikders.TUR_ID)
+            @Html.TextBoxFor(m => m.Akademikders.TUR_ID, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Akademikders.KREDI)
+            @Html.TextBoxFor(m => m.Akademikders.KREDI, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Akademikders.DIL_ID)
+            @Html.TextBoxFor(m => m.Akademikders.DIL_ID, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Akademikders.Ders_Kod)
+            @Html.TextBoxFor(m => m.Akademikders.Ders_Kod, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Akademikders.AKTS)
+            @Html.TextBoxFor(m => m.Akademikders.AKTS, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Akademikders.Danışman_Id)
+            @Html.DropDownListFor(m => m.Akademikders.Danışman_Id, new SelectList(Model.Danışman, "Danışman_Id", "Danışman_Id"), "Alan Seçiniz", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Akademikders.Uzmanlık_Id)
+            @Html.DropDownListFor(m => m.Akademikders.Uzmanlık_Id, new SelectList(Model.UzmanlıkAlanı, "Uzmanlık_Id", "Uzmanlık_Ad"), "Alan Seçiniz", new { @class = "form-control" })
+        </div>
+        @*<div class="form-group">
+            @Html.LabelFor(m => m.Ders_Ekleme_Çıkarma.Akademik_Dönem_Id)
+            @Html.DropDownListFor(m => m.Ders_Ekleme_Çıkarma.Akademik_Dönem_Id, new SelectList(Model.AkademikDonem, "Akademik_Dönem_Id", "Yarıyıl"), "Alan Seçiniz", new { @class = "form-control" })
+        </div>*@
+
+        @Html.HiddenFor(m => m.Akademikders.Akademik_Ders_Id);
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    }
+
+</div>

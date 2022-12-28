@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Projeveritabanıdeneme.Models.EntityFramework.Akademik_Ders>
+@{
+    ViewBag.Title = "Index3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-3">
+    @using (Html.BeginForm("Index3", "Admin", FormMethod.Get))
+    {
+        @Html.TextBox("searching")
+        <input type="submit" value="Ara" />
+
+    }
+    <p align="left"><a class="btn btn-dark " href="/Admin/Yeniders">Yeni Danışman Ekle</a>
+
+        <h2>Akademik Ders Listesi</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Ders Kodu</th>
+                    <th>Ders Tanımı</th>
+                    <th>Ders Uzmanlık Alanı</th>
+                    <th>Ders Yürütücü</th>
+                    <th>Ders Dili</th>
+                    <th>Ders Türü</th>
+                    <th>Kredi</th>
+                    <th>AKTS</th>
+                    <th>Güncelle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var akademikDers in Model)
+                {
+
+                    <tr>
+                        <td>@Html.DisplayFor(modelakademikders => akademikDers.Ders_Kod)</td>
+                        <td>@Html.DisplayFor(modelakademikDers => akademikDers.Ders_Tanımı)</td>
+                        <td>@Html.DisplayFor(modelakademikders => akademikDers.Uzmanlık_Alanı.Uzmanlık_Ad)</td>
+                        <td>@Html.DisplayFor(modelakademikDers => akademikDers.Danışman_Id)</td>
+                        <td>@Html.DisplayFor(modelakademikDers => akademikDers.DIL_ID)</td>
+                        <td>@Html.DisplayFor(modelakademikDers => akademikDers.TUR_ID)</td>
+                        <td>@Html.DisplayFor(modelakademikDers => akademikDers.KREDI)</td>
+                        <td>@Html.DisplayFor(modelakademikDers => akademikDers.AKTS)</td>
+                        <td>@Html.ActionLink("Güncelle", "Guncelleders", new { id = akademikDers.Akademik_Ders_Id }, new { @class = "btn btn-primary" })</td>
+                        <td>@Html.ActionLink("Sil", "SilAkademikDers", new { id = akademikDers.Akademik_Ders_Id }, new { @class = "btn btn-warning" })</td>
+
+                       
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+</div>

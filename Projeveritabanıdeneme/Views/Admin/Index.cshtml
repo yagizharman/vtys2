@@ -1,0 +1,60 @@
+﻿@model IEnumerable< Projeveritabanıdeneme.Models.EntityFramework.Danışman>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-3">
+    @using (Html.BeginForm("Index", "Admin", FormMethod.Get))
+    {
+     
+        @Html.TextBox("searching")
+        <input type="submit" value="Ara" />
+
+       }
+    <p align="left"><a class="btn btn-dark " href="/Admin/Yenidanisman">Yeni Danışman Ekle</a>
+
+    <h2>Danışman Listesi</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>TC_No</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Uzmanlık Alanı</th>
+                <th>Uzmanlık Başlama Tarihi</th>
+                <th>Unvan</th>
+                <th>Yaş</th>
+                <th>Doğum Tarihi</th>
+                <th>Doğum Yeri</th>
+                <th>Uyruk</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var danışman in Model)
+            {
+
+            <tr>
+                <td>@Html.DisplayFor(modeldanışman => danışman.Kullanıcı.TC_No)</td>
+                <td>@Html.DisplayFor(modeldanışman => danışman.Danışman_Ad)</td>
+                <td>@Html.DisplayFor(modeldanışman => danışman.Danışman_Soyad)</td>
+                <td>@Html.DisplayFor(modeldanışman => danışman.Uzmanlık_Alanı.Uzmanlık_Ad)</td>
+                <td>@danışman.Uzmanlık_Başlama_Tarihi.Value.ToString("dd-MM-yyyy")</td>
+                <td>@Html.DisplayFor(modeldanışman => danışman.Unvan)</td>
+                <td>@(DateTime.Now.Year-danışman.Danışman_Doğum_Tarihi.Value.Year)</td>
+                <td>@danışman.Danışman_Doğum_Tarihi.Value.ToString("dd-MM-yyyy")</td>
+                <td>@Html.DisplayFor(modeldanışman => danışman.Danışman_Doğum_Yeri)</td>
+                <td>@Html.DisplayFor(modeldanışman => danışman.Danışman_Uyruğu)</td>
+
+                <td>@Html.ActionLink("Güncelle", "Guncelle3", new { id = danışman.Danışman_Id }, new { @class = "btn btn-primary" })</td>
+                <td>@Html.ActionLink("Sil", "SilPersonel", new { id = danışman.Danışman_Id }, new { @class = "btn btn-warning" })</td>
+
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+

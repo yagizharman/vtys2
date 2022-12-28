@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ee63faf3c38345399cfa9e18a8ed1673" Name="Diagram1">
+        <EntityTypeShape EntityType="proje1Model.Akademik_Ders" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proje1Model.Akademik_Ders_Öğrenci" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proje1Model.Akademik_Dönem" Width="1.5" PointX="6" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proje1Model.Danışman" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proje1Model.Ders_Ekleme_Çıkarma" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proje1Model.Kullanıcı" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="proje1Model.Öğrenci" Width="1.5" PointX="11.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proje1Model.Uzmanlık_Alanı" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proje1Model.Yorum" Width="1.5" PointX="13.5" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="proje1Model.FK__Akademik___Akade__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Akademik___Danış__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Akademik___Uzman__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Ders_Ekle__Akade__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Akademik___Öğren__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Ders_Ekle__Akade__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Danışman__Kullan__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Danışman__Uzmanl__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Öğrenci__Danışma__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Yorum__Danışman___33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Öğrenci__Kullanı__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Öğrenci__Uzmanlı__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="proje1Model.FK__Yorum__Öğrenci_I__32E0915F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
